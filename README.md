@@ -1,22 +1,18 @@
 # FIB
 
+The project contains a supervisor that launches a server. The server exposes a dummy solve method that receives a number as an input and returns input + 3.
+
+Install elixir form: http://elixir-lang.org/install.html
+
+```sh
 mix compile
-iex -S mix
-FIB.Supervisor.start_link
-FIB.Server.solve(FIB.Server, 3)
-
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `fib` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [{:fib, "~> 0.1.0"}]
-end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/fib](https://hexdocs.pm/fib).
-
+```sh
+iex -S mix
+```
+```sh
+FIB.Supervisor.start_link
+```
+```sh
+FIB.Server.solve(FIB.Server, 3)
+```
