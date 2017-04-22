@@ -4,6 +4,8 @@ The project contains a supervisor that launches a server. The server exposes a d
 
 Install elixir form: http://elixir-lang.org/install.html
 
+Make sure you set the right path for the input file in lib/appsupervisor.ex
+
 ```sh
 mix compile
 ```
@@ -11,8 +13,8 @@ mix compile
 iex -S mix
 ```
 ```sh
-FIB.Supervisor.start_link
+FIB.AppSupervisor.start_link
 ```
 ```sh
-FIB.Server.solve(FIB.Server, 3)
+FIB.AppSupervisor.do_final()
 ```
