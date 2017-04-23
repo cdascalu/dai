@@ -9,6 +9,7 @@ defmodule FIB.AppSupervisor do
     children = [
       worker(FIB.FileReader, ['/Users/cristi/projects/dai/fibonacci.in', [name: FileReaderPID]]),
       worker(FIB.CachingFibonacci, [[name: FibonacciPID]]),
+      worker(FIB.Printer, [[name: PrinterPID]]),
     ]
 
     supervise(children, [strategy: :one_for_one])
@@ -16,6 +17,6 @@ defmodule FIB.AppSupervisor do
 
   def do_final() do 
     k = FIB.FileReader.read_number(FileReaderPID)
-    FIB.CachingFibonacci.get_nth(k, 13)
+    FIB.Printer.print(PrinterPID, FIB.CachingFibonacci.get_nth(k, 13))
   end
 end
