@@ -13,9 +13,6 @@ mix compile
 iex -S mix
 ```
 ```sh
-FIB.AppSupervisor.start_link
-```
-```sh
 FIB.AppSupervisor.do_final()
 ```
 
