@@ -11,7 +11,7 @@ defmodule FIB.AppSupervisor do
       worker(FIB.CachingFibonacci, [[name: FibonacciPID]]),
     ]
 
-    supervise(children, strategy: :one_for_one)
+    supervise(children, [strategy: :one_for_one])
   end
 
   def do_final() do 

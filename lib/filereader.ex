@@ -13,6 +13,7 @@ defmodule FIB.FileReader do
   def handle_call(:read, _from, stream) do
     list = stream |> Stream.map(&String.trim_trailing/1)
                   |> Enum.to_list
+
     {:reply, String.to_integer(hd(list)), stream}
   end
 
