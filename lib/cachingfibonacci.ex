@@ -14,7 +14,7 @@ defmodule FIB.CachingFibonacci do
       worker(FIB.Comparer, [[name: ComparerPID]])
     ]
 
-    supervise(children, strategy: :one_for_one)
+    supervise(children, [strategy: :one_for_all])
   end
 
   def populate_list(value, max, modulo) do
