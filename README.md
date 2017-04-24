@@ -1,4 +1,4 @@
-# FIB
+# FIB P10.7
 
 The project contains a supervisor that launches a server. The server exposes a dummy solve method that receives a number as an input and returns input + 3.
 
